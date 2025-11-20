@@ -1,6 +1,6 @@
 # SBM_PJU
 Judul:
-Implementasi Smart Street Lighting Berbasis IoT Menggunakan Sensor LDR dan RTC sebagai Pengendali Pencahayaan Adaptif
+IntelliLight: Implementasi Smart Street Lighting Berbasis IoT Menggunakan Sensor LDR dan RTC sebagai Pengendali Pencahayaan Adaptif
 Latar Belakang:
 Rumusan Masalah:
 Tujuan:
