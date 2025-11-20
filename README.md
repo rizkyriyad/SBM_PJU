@@ -1,6 +1,6 @@
 # SBM_PJU
 Judul:
-Lampu Jalan Cerdas Berbasis IoT Menggunakan Teknologi LDR Sensor dengan RTC
+Implementasi Smart Street Lighting Berbasis IoT Menggunakan Sensor LDR dan RTC sebagai Pengendali Pencahayaan Adaptif
 Latar Belakang:
 Rumusan Masalah:
 Tujuan:
