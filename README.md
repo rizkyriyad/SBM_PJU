@@ -7,7 +7,7 @@ Nama Anggota :
 2. Hizkia Chris Stevanus
 
 Latar Belakang:
-Sistem pencahayaan jalan konvensional merupakan kontributor signifikan terhadap konsumsi energi listrik perkotaan. Operasi lampu secara penuh dan terus-menerus, terutama di area dengan lalu lintas rendah, menyebabkan pemborosan energi yang tinggi dan bertentangan dengan prinsip efisiensi energi dalam konteks smart cities. Perkembangan teknologi LED dan IoT memungkinkan perancangan sistem Smart Street Lighting (SSL) yang bereaksi cepat dan hemat daya. Penelitian ini bertujuan mengimplementasikan sistem IntelliLight untuk mengontrol intensitas pencahayaan secara adaptif menggunakan kombinasi Sensor LDR (untuk kondisi lingkungan) dan RTC (untuk kontrol berbasis waktu), sehingga dapat mengurangi pemborosan energi dan meningkatkan efisiensi pengelolaan lampu jalan.
+Sistem pencahayaan jalan konvensional merupakan kontributor signifikan terhadap konsumsi energi listrik perkotaan. Operasi lampu secara penuh dan terus-menerus, terutama di area dengan lalu lintas rendah, menyebabkan pemborosan energi yang tinggi dan bertentangan dengan prinsip efisiensi energi dalam konteks smart cities. Perkembangan teknologi LED dan IoT memungkinkan perancangan sistem Smart Street Lighting (SSL) yang bereaksi cepat dan hemat daya.
 
 Rumusan Masalah:
 1. Bagaimana cara kerja sistem IntelliLight yang berbasis IoT dapat dirancang menggunakan kombinasi Sensor LDR dan RTC sebagai pengontrol utama pencahayaan adaptif?
