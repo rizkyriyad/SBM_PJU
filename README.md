@@ -2,6 +2,10 @@
 Judul:
 IntelliLight: Implementasi Smart Street Lighting Berbasis IoT Menggunakan Sensor LDR dan RTC sebagai Pengendali Pencahayaan Adaptif
 
+Nama Anggota :
+1. Muhammad Rizky Riyadin
+2. Hizkia Chris Stevanus
+
 Latar Belakang:
 Sistem pencahayaan jalan konvensional merupakan kontributor signifikan terhadap konsumsi energi listrik perkotaan. Operasi lampu secara penuh dan terus-menerus, terutama di area dengan lalu lintas rendah, menyebabkan pemborosan energi yang tinggi dan bertentangan dengan prinsip efisiensi energi dalam konteks smart cities. Perkembangan teknologi LED dan IoT memungkinkan perancangan sistem Smart Street Lighting (SSL) yang bereaksi cepat dan hemat daya. Penelitian ini bertujuan mengimplementasikan sistem IntelliLight untuk mengontrol intensitas pencahayaan secara adaptif menggunakan kombinasi Sensor LDR (untuk kondisi lingkungan) dan RTC (untuk kontrol berbasis waktu), sehingga dapat mengurangi pemborosan energi dan meningkatkan efisiensi pengelolaan lampu jalan.
 
