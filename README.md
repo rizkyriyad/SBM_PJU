@@ -1,4 +1,3 @@
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/ed7fb2f6-40b2-4f95-a071-3274cabd1f93" /><img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/9643acee-6e90-47b0-baa7-91a5259fbd52" /><img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/3c93e89f-1b9c-46b1-abfb-ad91b261b25a" /># SBM_PJU
 Judul:
 IntelliLight: Implementasi Smart Street Lighting Berbasis IoT Menggunakan Sensor Cahaya dan RTC sebagai Pengendali Pencahayaan Adaptif
 
