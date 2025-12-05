@@ -43,10 +43,9 @@ Uji Coba Komponen
    LCD diuji untuk menampilkan Time : (Jam:Menit:Detik AM/PM) dan Kecerahan Lampu : (1-100%)
    <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/2c49a9c6-2be1-47e1-bb97-4a7da658df70" />
 
-7. Integrasi Keseluruhan Sistem
+6. Integrasi Keseluruhan Sistem
    Integrasi keseluruhan sistem dilakukan dengan menggabungkan fungsi Sensor LDR, RTC, LED, dan LCD ke dalam satu rangkaian yang bekerja secara bersamaan dan saling mendukung. Sensor LDR berperan membaca intensitas cahaya lingkungan, sementara RTC memberikan acuan waktu yang akurat untuk menentukan mode operasi lampu sesuai jadwal malam dan dini hari. Nilai cahaya dari LDR kemudian diolah oleh mikrokontroler dan diterjemahkan menjadi sinyal PWM untuk mengatur kecerahan LED secara real-time. LCD digunakan untuk menampilkan data waktu dan persentase kecerahan sehingga proses kerja sistem dapat dipantau langsung. Setelah diintegrasikan, seluruh komponen terbukti dapat bekerja serentak tanpa konflik, menghasilkan sistem pencahayaan jalan adaptif yang mampu menyesuaikan intensitas lampu berdasarkan waktu dan kondisi cahaya lingkungan.
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/7301bc87-b007-4da3-be3f-37b94e2dd55c" />
-Integrasi
 <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/d70c0d6e-2a84-4c54-8c5a-fd56701f29d5" />
 
 Hasil dan pembahasan:
