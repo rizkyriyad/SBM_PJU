@@ -40,15 +40,15 @@ Tujuan utama dari pengembangan prototipe **IntelliLight (Implementasi Smart Stre
 
 Adapun alat dan bahan yang digunakan dalam prototipe **IntelliLight** adalah:
 
-1. **Arduino Mega** – mikrokontroler utama untuk pemrograman dan pengendalian sistem.
-2. **ESP8266** – modul Wi-Fi untuk koneksi IoT dan pengiriman data secara nirkabel.
-3. **Lampu LED** – berfungsi sebagai representasi lampu jalan; kecerahannya dikontrol menggunakan **PWM**.
-4. **Liquid Crystal Display (LCD) 2x16** – menampilkan status lampu secara real-time serta menunjukkan waktu setempat.
-5. **Kabel** – untuk menghubungkan antar perangkat dan modul.
-6. **Light Sensor (LDR)** – sebagai pendeteksi intensitas cahaya lingkungan.
-7. **Real Time Clock (RTC)** – sebagai penentu waktu aktual untuk mengatur logika malam dan siang.
-8. **Power Supply 5V** – untuk menyuplai daya ke semua modul dan sensor secara stabil.
-9. Laptop -  Untuk memprogram Arduino menggunakan Arduino IDE dan memonitor keluaran melalui Serial Monitor.
+1. **Arduino (Mikrokontroler)** – sebagai mikrokontroler utama untuk pemrograman dan pengendalian sistem.  
+2. **Lampu LED** – berfungsi sebagai representasi lampu jalan; kecerahannya dikontrol menggunakan **PWM**.  
+3. **Liquid Crystal Display (LCD) 2x16** – menampilkan status lampu secara real-time serta menunjukkan waktu setempat.  
+4. **Kabel** – untuk menghubungkan antar perangkat dan modul.  
+5. **Light Sensor (LDR)** – sebagai pendeteksi intensitas cahaya lingkungan.  
+6. **Real Time Clock (RTC)** – sebagai penentu waktu aktual untuk mengatur logika malam dan siang.  
+7. **Laptop** – untuk memprogram Arduino menggunakan Arduino IDE dan memonitor keluaran melalui Serial Monitor.  
+
+> **Catatan:** Alat dan bahan akan ditambahkan seiring berjalannya pengembangan prototipe.
 
 ## Pengujian Komponen
 
@@ -304,38 +304,131 @@ void loop() {
 **Kesimpulan:**  
 Hasil pengujian menunjukkan bahwa sensor LDR berhasil mendeteksi perubahan cahaya lingkungan secara akurat, dan LED merespons dengan kecerahan yang sesuai. LED mampu menyesuaikan kecerahan secara adaptif sesuai ambang yang telah ditentukan, sehingga sistem IntelliLight siap berfungsi sebagai smart street lighting berbasis IoT.
 
-Pembuatan Alat:
-1. Wiring:
-   a. LED dikoneksikan ke D6 PWM
-   b. LCD dikoneksikan I2C
-   c. RTC dikoneksikan I2C
-2. Pembuatan Program dan Integrasi:
-Uji Coba Komponen
-1. Pengujian Sensor Cahaya
-   Pengujian dilakukan dengan memvariasikan intensitas cahaya pada sensor LDR menggunakan kondisi terang, redup, dan gelap.
-2. Pengujian RTC (Real Time Clock)
-   RTC diuji sebagai acuan waktu otomatis untuk memaksa lampu menyala 100% pada pukul 19.00 - 11.59, dan pada pukul 00.00 hingga pukul 06.00 menyala dengan intensitas cahaya 50%.
-3. Pengujian LED
-   LED diuji dengan program kondisi 1 dan 0 terlebih dahulu sebelum diintegrasikan
-5. Pengujian LCD
-   LCD diuji untuk menampilkan Time : (Jam:Menit:Detik AM/PM) dan Kecerahan Lampu : (1-100%)
+## Pembuatan Alat
 
-6. Integrasi Keseluruhan Sistem
-   Integrasi keseluruhan sistem dilakukan dengan menggabungkan fungsi Sensor LDR, RTC, LED, dan LCD ke dalam satu rangkaian yang bekerja secara bersamaan dan saling mendukung. Sensor LDR berperan membaca intensitas cahaya lingkungan, sementara RTC memberikan acuan waktu yang akurat untuk menentukan mode operasi lampu sesuai jadwal malam dan dini hari. Nilai cahaya dari LDR kemudian diolah oleh mikrokontroler dan diterjemahkan menjadi sinyal PWM untuk mengatur kecerahan LED secara real-time. LCD digunakan untuk menampilkan data waktu dan persentase kecerahan sehingga proses kerja sistem dapat dipantau langsung. Setelah diintegrasikan, seluruh komponen terbukti dapat bekerja serentak tanpa konflik, menghasilkan sistem pencahayaan jalan adaptif yang mampu menyesuaikan intensitas lampu berdasarkan waktu dan kondisi cahaya lingkungan.
-<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/7301bc87-b007-4da3-be3f-37b94e2dd55c" />
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/d70c0d6e-2a84-4c54-8c5a-fd56701f29d5" />
+Pada tahap pembuatan alat, sistem IntelliLight mulai diintegrasikan sebagai prototipe Smart Street Lighting berbasis Arduino. Sistem ini menggabungkan **Sensor LDR**, **RTC**, **LED**, dan **LCD** untuk membentuk lampu jalan adaptif yang menyesuaikan kecerahan berdasarkan kondisi cahaya lingkungan dan waktu aktual.
 
-Hasil dan pembahasan:
-Berdasarkan hasil perancangan, pengujian, dan analisis sistem IntelliLight, dapat disimpulkan bahwa prototipe Smart Street Lighting berbasis Arduino, Sensor LDR, dan RTC berhasil berfungsi sesuai tujuan. Sensor LDR mampu membaca intensitas cahaya lingkungan dengan baik dan mengatur tingkat kecerahan lampu LED secara adaptif melalui PWM. Sistem juga berhasil memanfaatkan RTC sebagai pengendali waktu sehingga lampu dapat menyala 100% antara pukul 19.00 hingga 06.00, terlepas dari kondisi cahaya di sekitar, meniru perilaku lampu jalan pada umumnya.
+Fokus utama tahap ini adalah merancang wiring dan struktur dasar program sebelum dilakukan pengujian komponen secara terpisah. LED digunakan sebagai output lampu jalan, Sensor LDR membaca intensitas cahaya sekitar, RTC menyediakan waktu aktual untuk logika malam dan dini hari, dan LCD menampilkan waktu serta persentase kecerahan lampu secara real-time.
 
-Hasil pengujian:
-1. Ketika waktu menunjukkan pukul 03.00 pagi (AM), kecerahan lampu 50%
-<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/93781025-c45b-4fe8-a349-a7f38fb87135" />
-2. Ketika waktu menunjukkan pukul 11.00 malam (PM), kecerahan lampu 100%
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/fd0032d3-73d1-49d4-b8eb-9fd960260186" />
-3. Ketika waktu menunjukkan pukul 13.00 siang (AM) dengan kondisi suasana mendung/gelap, kecerahan lampu 98% (tergantung intensitas cahaya di sekitar)
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/331d63d9-87ad-4290-9fa6-48a74b60b171" />
-4.Ketika waktu menunjukkan pukul 13.00 siang (AM) dengan kondisi suasana terang, kecerahan lampu 23% (tergantung intensitas cahaya di sekitar)
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/dfec2d7e-3336-4f9a-b428-8a8e20719d01" />
+Tahap pembuatan alat mencakup:  
+1. **Wiring:**  
+   - LED dikoneksikan ke pin **D6 PWM**  
+   - LCD dikoneksikan melalui **I2C**  
+   - RTC dikoneksikan melalui **I2C**  
 
-Integrasi seluruh komponen (RTC, LDR, LCD, dan LED) berjalan stabil tanpa konflik, serta memberikan respons real-time terhadap perubahan cahaya. Dari pengujian yang dilakukan, sistem mampu menghemat energi di siang hari, meningkatkan intensitas cahaya pada kondisi redup, dan memberikan pencahayaan maksimal di malam hari. Dengan demikian, IntelliLight berhasil menunjukkan bahwa kombinasi sensor lingkungan dan kontrol waktu dapat menghasilkan sistem pencahayaan adaptif yang efisien, responsif, dan relevan untuk implementasi Smart City.
+2. **Pembuatan Program dan Integrasi:**  
+   - Membuat struktur program awal untuk membaca sensor dan mengatur LED serta menampilkan informasi di LCD.  
+   - Sistem masih dalam versi **non-IoT**, fokus pada pengoperasian lokal.  
+## Kode IntelliLight
+
+Berikut potongan kode untuk prototipe IntelliLight yang mengintegrasikan **Sensor LDR**, **RTC**, **LED**, dan **LCD**. Sistem ini masih versi non-IoT dan fokus pada pengoperasian lokal.
+
+```cpp
+#include <Wire.h>
+#include "DS1307.h"
+#include <rgb_lcd.h>
+
+rgb_lcd lcd;
+DS1307 clock;
+
+int ldrPin = A0;
+int ledPin = 6;
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  clock.begin();
+
+  clock.fillByHMS(13, 19, 40);  // Set waktu awal
+  clock.setTime();
+
+  lcd.begin(16, 2);
+  lcd.clear();
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  clock.getTime();
+
+  int hour24 = clock.hour;
+  int minute = clock.minute;
+  int second = clock.second;
+
+  int hour12 = hour24;
+  String ampm = "AM";
+
+  if (hour24 == 0) hour12 = 12;
+  else if (hour24 == 12) ampm = "PM";
+  else if (hour24 > 12) {
+    hour12 = hour24 - 12;
+    ampm = "PM";
+  }
+
+  int ldrValue = analogRead(ldrPin);
+  int brightnessPercent = map(ldrValue, 200, 900, 100, 0);
+  brightnessPercent = constrain(brightnessPercent, 0, 100);
+
+  // Aturan waktu malam dan dini hari
+  if (hour24 >= 18 && hour24 <= 23) {
+    brightnessPercent = 100;
+  } else if (hour24 >= 0 && hour24 < 6) {
+    brightnessPercent = 50;
+  }
+
+  int pwmValue = map(brightnessPercent, 1, 100, 1, 255);
+  analogWrite(ledPin, pwmValue);
+
+  // Tampilkan waktu di LCD
+  lcd.setCursor(0, 0);
+  lcd.print("Time ");
+  lcd.print(hour12);
+  lcd.print(":");
+  if (minute < 10) lcd.print("0");
+  lcd.print(minute);
+  lcd.print(":");
+  if (second < 10) lcd.print("0");
+  lcd.print(second);
+  lcd.print(" ");
+  lcd.print(ampm);
+
+  // Tampilkan kecerahan lampu di LCD
+  lcd.setCursor(0, 1);
+  lcd.print("Kecerahan:");
+  lcd.print(brightnessPercent);
+  lcd.print("% ");
+
+  delay(200); // Update setiap 200 ms
+}
+```
+
+
+
+## Hasil dan Pembahasan
+
+Berdasarkan hasil perancangan, pengujian, dan analisis sistem **IntelliLight**, prototipe Smart Street Lighting berbasis Arduino, **Sensor LDR**, dan **RTC** berhasil berfungsi sesuai tujuan. Sensor LDR mampu membaca intensitas cahaya lingkungan dengan baik dan mengatur tingkat kecerahan lampu LED secara adaptif melalui PWM. Sistem juga memanfaatkan RTC sebagai pengendali waktu sehingga lampu dapat menyala **100% antara pukul 19.00 hingga 06.00**, terlepas dari kondisi cahaya sekitar, meniru perilaku lampu jalan pada umumnya.
+
+### Hasil Pengujian
+
+| Waktu         | Kondisi Lingkungan | Kecerahan LED (%) |
+|---------------|------------------|-----------------|
+| 03:00 AM      | Malam gelap       | 50              |
+| 11:00 PM      | Malam             | 100             |
+| 13:00 PM      | Mendung / gelap   | 98              |
+| 13:00 PM      | Terang            | 23              |
+
+### Pembahasan
+
+Integrasi seluruh komponen (**RTC, LDR, LCD, dan LED**) berjalan stabil tanpa konflik, memberikan respons **real-time** terhadap perubahan cahaya. Sistem berhasil menghemat energi di siang hari, meningkatkan intensitas cahaya saat kondisi redup, dan memberikan pencahayaan maksimal di malam hari. Hal ini menunjukkan bahwa kombinasi sensor lingkungan dan kontrol waktu dapat menghasilkan **sistem pencahayaan adaptif** yang efisien, responsif, dan relevan untuk implementasi **Smart City**.
+
+
+## Kesimpulan
+
+Prototipe **IntelliLight** berhasil menunjukkan bahwa integrasi antara **sensor cahaya (LDR)** dan **modul waktu (RTC)** dapat menghasilkan sistem pencahayaan jalan yang **adaptif terhadap kondisi lingkungan dan waktu nyata**. Sensor LDR terbukti sensitif dalam membaca intensitas cahaya dan menghasilkan sinyal untuk mengatur kecerahan LED, sementara modul RTC memberikan referensi waktu yang akurat sehingga logika siang–malam dapat dijalankan tanpa intervensi manual. Sistem ini memungkinkan lampu menyala pada tingkat maksimal di malam hari dan menyesuaikan kecerahan saat kondisi cahaya alami berubah, sehingga meningkatkan efisiensi energi dibandingkan sistem konvensional.  
+
+Konsep pengaturan pencahayaan berbasis sensor cahaya dan waktu seperti ini sejalan dengan temuan penelitian sebelumnya yang menunjukkan bahwa penggunaan sensor cahaya untuk mengatur lampu dapat **mengurangi konsumsi energi** sekaligus meningkatkan fungsionalitas sistem pencahayaan pintar.  
+
+**Sumber Referensi:**
+
+1. Penelitian terkait efisiensi energi menggunakan sensor cahaya: [Journal of Information Technology and Engineering, Univ. Lampung](https://journal.eng.unila.ac.id/index.php/jitet/article/view/6340?utm_source=chatgpt.com)  
+2. Sistem smart lighting adaptif di Smart City: [Research on Photocell-Based Control Algorithms](https://eureka.patsnap.com/report-research-on-photocell-based-control-algorithms-for-smart-city-street-lighting?utm_source=chatgpt.com)  
+
