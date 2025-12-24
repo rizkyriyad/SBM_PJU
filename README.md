@@ -1,12 +1,25 @@
-Judul:
-IntelliLight: Implementasi Smart Street Lighting Berbasis IoT Menggunakan Sensor Cahaya dan RTC sebagai Pengendali Pencahayaan Adaptif
+# IntelliLight  
+**Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
 Nama Anggota :
 1. Muhammad Rizky Riyadin
 2. Hizkia Chris Stevanus
 
-Latar Belakang:
-Sistem pencahayaan jalan konvensional merupakan kontributor signifikan terhadap konsumsi energi listrik perkotaan. Operasi lampu secara penuh dan terus-menerus, terutama di area dengan lalu lintas rendah, menyebabkan pemborosan energi yang tinggi dan bertentangan dengan prinsip efisiensi energi dalam konteks smart cities. Perkembangan teknologi LED dan IoT memungkinkan perancangan sistem Smart Street Lighting (SSL) yang bereaksi cepat dan hemat daya.
+## Latar Belakang
+
+Penerangan jalan umum merupakan infrastruktur penting yang berperan dalam mendukung keselamatan, keamanan, dan aktivitas masyarakat pada malam hari. Namun, sistem penerangan jalan konvensional umumnya masih bersifat statis, di mana lampu menyala penuh dari senja hingga fajar tanpa mempertimbangkan kondisi lingkungan yang sebenarnya. Pola ini menyebabkan konsumsi energi yang tinggi serta pemborosan sumber daya, terutama saat kondisi jalan sepi atau intensitas cahaya alami masih mencukupi. Beberapa penelitian menunjukkan bahwa sistem penerangan jalan menyumbang porsi signifikan dari konsumsi energi listrik perkotaan, sehingga diperlukan solusi yang lebih efisien dan adaptif  
+([Emerald Insight, 2011](https://www.emerald.com/insight/content/doi/10.1108/17427371111146437/full/html)).
+
+Salah satu permasalahan utama pada sistem penerangan jalan konvensional adalah tidak adanya mekanisme pengendalian yang responsif terhadap perubahan intensitas cahaya dan waktu operasional. Pengaturan berbasis timer sederhana sering kali kurang akurat karena tidak memperhitungkan faktor cuaca, musim, maupun pergeseran waktu matahari terbit dan terbenam. Akibatnya, lampu tetap menyala meskipun tidak dibutuhkan, yang berdampak pada meningkatnya biaya operasional dan menurunnya efisiensi energi.
+
+Perkembangan teknologi sensor, mikrokontroler, dan Internet of Things (IoT) membuka peluang untuk mengembangkan sistem penerangan jalan pintar (*smart street lighting*). Sensor cahaya dapat digunakan untuk mendeteksi intensitas pencahayaan lingkungan secara real-time, sedangkan Real Time Clock (RTC) berfungsi sebagai acuan waktu yang akurat untuk pengaturan jadwal operasional lampu. Penelitian yang dipublikasikan oleh MDPI menunjukkan bahwa sistem penerangan adaptif berbasis IoT mampu meningkatkan efisiensi energi serta mendukung konsep *smart city* melalui pengendalian dan pemantauan yang lebih fleksibel  
+([MDPI, 2021](https://www.mdpi.com/2624-6511/3/4/71)).
+
+Selain itu, berbagai penelitian terdahulu juga menegaskan bahwa penggunaan sensor cahaya dan mikrokontroler pada sistem penerangan jalan dapat mengurangi konsumsi energi serta meningkatkan keandalan sistem dibandingkan metode konvensional. Studi yang dipublikasikan melalui Academia.edu menunjukkan bahwa integrasi sensor dan sistem kendali otomatis merupakan fondasi yang kuat dalam pengembangan smart street lighting berbasis IoT  
+([Academia.edu, SUB156224](https://www.academia.edu/download/75810626/SUB156224.pdf)).
+
+Berdasarkan permasalahan dan penelitian terdahulu tersebut, dikembangkan **IntelliLight**, yaitu sistem *smart street lighting* berbasis IoT yang memanfaatkan sensor cahaya dan Real Time Clock (RTC) sebagai pengendali pencahayaan adaptif. Sistem ini dirancang untuk menyesuaikan kondisi nyala lampu berdasarkan intensitas cahaya lingkungan dan waktu operasional secara otomatis, sehingga mampu meningkatkan efisiensi energi dan mendukung penerapan penerangan jalan yang cerdas dan berkelanjutan.
+
 
 Rumusan Masalah:
 1. Bagaimana cara kerja sistem IntelliLight yang berbasis IoT dapat dirancang menggunakan kombinasi Sensor LDR dan RTC sebagai pengontrol utama pencahayaan adaptif?
