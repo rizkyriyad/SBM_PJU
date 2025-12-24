@@ -310,6 +310,7 @@ Fokus utama tahap ini adalah merancang wiring dan struktur dasar program sebelum
 Tahap pembuatan alat mencakup:  
 1. **Wiring:**  
    - LED dikoneksikan ke pin **D6 PWM**  
+   - LDR dikoneksikan ke pin **A0**
    - LCD dikoneksikan melalui **I2C**  
    - RTC dikoneksikan melalui **I2C**  
 
