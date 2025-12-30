@@ -1,4 +1,4 @@
-# IntelliLight  
+<img width="1600" height="1200" alt="pengujian lcd" src="https://github.com/user-attachments/assets/dff22209-2784-4004-8722-7822210ad22c" /># IntelliLight  
 **Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
 Nama Anggota :
@@ -454,7 +454,7 @@ Dengan demikian, penggunaan ESP32 tidak hanya praktis untuk simulasi, tetapi jug
 | V0 | Jam RTC | STRING |
 | V1 | Sensor Cahaya (LDR) | INTEGER |
 | V2 | Kecerahan Lampu | INTEGER (%) |
-| V3 | Tombol ON/OFF Lampu | BUTTON |
+| V3 | Tombol ON/OFF Lampu | - |
 | V4 | Slider Kecerahan Lampu | SLIDER (0-100) |
 
 ---
@@ -646,3 +646,19 @@ Berikut adalah dokumentasi visual dari simulasi dan kontrol lampu pada wokwi:
 Prototipe IntelliLight berhasil membuktikan bahwa sistem Smart Street Lighting berbasis Arduino/ESP32, Sensor LDR, dan RTC dapat dirancang untuk berfungsi secara adaptif dan otomatis sesuai tujuan pembuatan prototipe. Sistem ini mampu membaca intensitas cahaya lingkungan melalui sensor LDR dan memproses data waktu dari RTC untuk mengatur kecerahan lampu LED secara real-time menggunakan PWM. Lampu menyala 100% pada malam hari (19.00–23.59) dan 50% pada dini hari (00.00–06.00), serta menyesuaikan kecerahan di siang hari berdasarkan cahaya sekitar, sehingga implementasi pencahayaan adaptif berjalan dengan efektif.
 
 Integrasi IoT menggunakan ESP32 dan Blynk memungkinkan lampu dikontrol secara jarak jauh melalui smartphone, memantau kecerahan lampu, status nyala/mati, serta waktu secara real-time. Simulasi dilakukan pada platform Wokwi, yang menunjukkan bagaimana prototipe ini dapat diuji secara virtual sebelum diterapkan di dunia nyata. Hasil pengujian dan integrasi ini menegaskan bahwa IntelliLight tidak hanya bekerja otomatis sebagai pengendali pencahayaan adaptif, tetapi juga siap diterapkan secara langsung untuk implementasi Smart City, menjawab rumusan masalah terkait mekanisme otomatisasi, pengendalian kecerahan lampu, dan integrasi IoT.
+
+
+## Dokumentasi Lainnya
+
+<img width="1280" height="960" alt="integrasi" src="https://github.com/user-attachments/assets/74702b71-e681-4e68-9223-a2afa9ce2e95" />
+![Uploading integrasi.png…]()
+<img width="1200" height="1600" alt="hasil pengujian 3 pagi" src="https://github.com/user-attachments/assets/79680bdf-d571-436b-aca9-7f85721d84b6" />
+<img width="1200" height="1600" alt="hasil pengujian 3 pagi" src="https://github.com/user-attachments/assets/d7ea6dca-0828-4b70-a4ff-88e82acda940" />
+<img width="1600" height="1200" alt="11 malam" src="https://github.com/user-attachments/assets/f5f4ba02-b19e-44bf-91a0-80faa470855b" />
+<img width="1600" height="1200" alt="11 malam" src="https://github.com/user-attachments/assets/03012b25-b5b5-4884-86e6-ca8ee9462bce" />
+<img width="1600" height="1200" alt="1 siang mendung" src="https://github.com/user-attachments/assets/55597e60-75e0-4789-a199-5e36137f9bc8" />
+<img width="1600" height="1200" alt="1 siang mendung" src="https://github.com/user-attachments/assets/cee14e61-5366-471f-8bff-b1ef4e45f13d" />
+<img width="1600" height="1200" alt="pengujian led" src="https://github.com/user-attachments/assets/be65d142-3336-49b4-a0d1-3942e2a6c8dd" />
+<img width="1600" height="1200" alt="pengujian lcd" src="https://github.com/user-attachments/assets/87b75fa0-6976-401e-a364-bb3ceb060407" />
+<img width="1600" height="1200" alt="pengujian led" src="https://github.com/user-attachments/assets/cea84db6-1b35-4f7e-894f-ddf90b64de48" />
+
