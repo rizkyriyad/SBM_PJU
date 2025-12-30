@@ -431,6 +431,9 @@ Proyek **IntelliLight** diintegrasikan dengan IoT menggunakan **ESP32** dan plat
 
 Simulasi dilakukan menggunakan **Wokwi** ([https://wokwi.com](https://wokwi.com)), platform simulasi elektronik berbasis web. ESP32 yang terhubung ke jaringan **Wi-Fi Guest** berkomunikasi langsung dengan Blynk menggunakan **Auth Token akun Blynk**. Setiap interaksi di aplikasi Blynk langsung mempengaruhi output di simulasi ESP32, termasuk **perubahan kecerahan**, **ON/OFF lampu**, serta **pemantauan sensor LDR**.
 
+Proyek simulasi Wokwi dapat diakses di [https://wokwi.com/projects/451770023013075969](https://wokwi.com/projects/451770023013075969)
+
+
 > **Mikrocontroller**  
 
 Pada simulasi Wokwi, prototipe **IntelliLight** menggunakan **ESP32 tunggal** dan **tidak menggunakan Arduino Mega**. Hal ini dikarenakan:
@@ -636,8 +639,7 @@ Berikut adalah dokumentasi visual dari simulasi dan kontrol lampu pada wokwi:
 | 1  | Tampilan Alat pada Simulasi Wokwi | <img width="753" height="708" alt="wokwi simulation" src="https://github.com/user-attachments/assets/bb78d805-3018-41e4-863d-ccb32accccf7" /> |
 | 2  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (1) | ![4444](https://github.com/user-attachments/assets/56715821-953d-4aa3-9ef8-8ffc554e3d05) |
 | 3  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (2) | ![11111](https://github.com/user-attachments/assets/4b839ec4-9148-435b-8ab6-2c66a2ebbee4) |
-| 4  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (3) | ![2222](https://github.com/user-attachments/assets/0caceb25-c6d8-47ec-aca6-0e759bc74ca2)  |
-| 5  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (3) | ![3333](https://github.com/user-attachments/assets/afc0682a-5f6e-421f-a9be-72b052c3d8c8) |
+| 4  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (3) | ![3333](https://github.com/user-attachments/assets/afc0682a-5f6e-421f-a9be-72b052c3d8c8) |
 
 ## Kesimpulan
 
