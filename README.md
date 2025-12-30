@@ -418,8 +418,229 @@ Setelah semua komponen diuji secara terpisah (LCD, LED, RTC, LDR), tahap selanju
 | 13:00 PM      | Mendung / gelap   | 98              | LED menyala tinggi         |
 | 13:00 PM      | Terang            | 23              | LED menyala rendah         |
 
+# Integrasi dengan IoT - IntelliLight
+
+## Narasi Integrasi
+
+Proyek **IntelliLight** diintegrasikan dengan IoT menggunakan **ESP32** dan platform **Blynk**. Integrasi ini memungkinkan **lampu jalan pintar dikontrol secara jarak jauh** melalui aplikasi Blynk di smartphone. Sistem dapat:
+
+- Memantau **kecerahan lampu** (persentase)
+- Mengetahui **jam saat ini** (RTC)
+- Memantau **status nyala/mati lampu**
+- Mengubah **kecerahan lampu menggunakan slider** secara real-time
+
+Simulasi dilakukan menggunakan **Wokwi** ([https://wokwi.com](https://wokwi.com)), platform simulasi elektronik berbasis web. ESP32 yang terhubung ke jaringan **Wi-Fi Guest** berkomunikasi langsung dengan Blynk menggunakan **Auth Token akun Blynk**. Setiap interaksi di aplikasi Blynk langsung mempengaruhi output di simulasi ESP32, termasuk **perubahan kecerahan**, **ON/OFF lampu**, serta **pemantauan sensor LDR**.
+
+> **Klarifikasi Pemilihan Mikrocontroller**  
+
+Pada simulasi Wokwi, prototipe **IntelliLight** menggunakan **ESP32 tunggal** dan **tidak menggunakan Arduino Mega**. Hal ini dikarenakan:
+
+1. **Wokwi hanya mendukung satu alat mikrocontroller utama** per proyek, sehingga tidak memungkinkan menggunakan Arduino Mega bersamaan dengan ESP32.  
+2. **ESP32 memiliki Wi-Fi bawaan**, sehingga dapat langsung diintegrasikan dengan platform IoT seperti Blynk tanpa modul tambahan, sedangkan Arduino Mega memerlukan modul eksternal seperti ESP8266.  
+3. **Sumber daya dan pin cukup** untuk mengontrol LED, membaca sensor LDR, menampilkan data di LCD, serta melakukan komunikasi real-time dengan Blynk.  
+4. **Kompatibilitas simulasi Wokwi** lebih stabil dengan ESP32, sehingga prototipe dapat dijalankan, diuji, dan dikontrol sepenuhnya melalui aplikasi Blynk.
+
+Dengan demikian, penggunaan ESP32 tidak hanya praktis untuk simulasi, tetapi juga relevan untuk implementasi nyata di lapangan tanpa memerlukan perangkat tambahan.
+
+---
+
+## Data Stream Blynk
+
+| Virtual Pin | Fungsi | Tipe Data |
+|------------|--------|-----------|
+| V0 | Jam RTC | STRING |
+| V1 | Sensor Cahaya (LDR) | INTEGER |
+| V2 | Kecerahan Lampu | INTEGER (%) |
+| V3 | Tombol ON/OFF Lampu | BUTTON |
+| V4 | Slider Kecerahan Lampu | SLIDER (0-100) |
+
+---
+
+## Coding Integrasi
+
+```cpp
+// =========================================
+// BLYNK CONFIG (ESP32)
+// =========================================
+#define BLYNK_TEMPLATE_ID "TMPL6zFvzaQmO"
+#define BLYNK_TEMPLATE_NAME "SMART PJU"
+#define BLYNK_AUTH_TOKEN "M_0EI-gobSbd52wrI2WxUJWszkGT54PP"
+
+#define BLYNK_PRINT Serial
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+// Auth Token & WiFi
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "Wokwi-GUEST";
+char pass[] = "";
+
+// =========================================
+// RTC, LCD, SENSOR
+// =========================================
+#include <Wire.h>
+#include "RTClib.h"
+#include <LiquidCrystal_I2C.h>
+
+RTC_DS1307 rtc;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Pins
+const int ldrPin = 34;   // ADC
+const int ledPin = 25;   // PWM output
+
+// Manual override
+bool manualOverride = false;
+int manualBrightness = 0;
+
+// Blynk V-pin mapping
+// V0 -> RTC STRING
+// V1 -> Sensor cahaya INTEGER
+// V2 -> LED brightness INTEGER %
+// V3 -> Tombol ON/OFF lampu
+// V4 -> Slider brightness manual
+
+// ==========================
+// BLYNK CALLBACKS
+// ==========================
+
+// Tombol ON/OFF
+BLYNK_WRITE(V3) {
+  int val = param.asInt();
+  if (val == 1) {        // ON
+    manualOverride = true;
+    manualBrightness = 100;
+  } else {               // OFF
+    manualOverride = true;
+    manualBrightness = 0;
+  }
+}
+
+// Slider brightness
+BLYNK_WRITE(V4) {
+  manualBrightness = param.asInt();  // 0-100
+  manualOverride = true;             // aktifkan manual override
+}
+
+// ==========================
+// SETUP
+// ==========================
+void setup() {
+  Serial.begin(115200);
+  delay(20);
+
+  // connect to Blynk
+  Serial.println("Connecting to Blynk...");
+  Blynk.begin(auth, ssid, pass);
+
+  // I2C + RTC
+  Wire.begin();
+  if (!rtc.begin()) {
+    Serial.println("RTC tidak ditemukan!");
+    while (1) delay(1000);
+  }
+  if (!rtc.isrunning()) {
+    Serial.println("RTC belum berjalan, set waktu awal...");
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+
+  // LCD
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+
+  Serial.println("IntelliLight ESP32 siap!");
+}
+
+// ==========================
+// LOOP
+// ==========================
+void loop() {
+  Blynk.run();
+
+  // ==========================
+  // Read RTC
+  // ==========================
+  DateTime now = rtc.now();
+  int hour24 = now.hour();
+  int minute = now.minute();
+  int second = now.second();
+
+  int hour12 = hour24;
+  String ampm = "AM";
+  if (hour24 == 0) hour12 = 12;
+  else if (hour24 == 12) ampm = "PM";
+  else if (hour24 > 12) { hour12 = hour24 - 12; ampm = "PM"; }
+
+  String timeStr = String(hour12) + ":" +
+                   (minute < 10 ? "0" : "") + String(minute) + ":" +
+                   (second < 10 ? "0" : "") + String(second) + " " + ampm;
+
+  // ==========================
+  // Read LDR
+  // ==========================
+  int ldrValue = analogRead(ldrPin); // raw ADC
+
+  // ==========================
+  // Hitung brightness
+  // ==========================
+  int brightnessPercent;
+  if (manualOverride) {
+    brightnessPercent = manualBrightness;
+  } else {
+    brightnessPercent = map(ldrValue, 200, 900, 100, 0);
+    brightnessPercent = constrain(brightnessPercent, 0, 100);
+    // Override berdasarkan waktu malam
+    if (hour24 >= 18 && hour24 <= 23) brightnessPercent = 100;
+    else if (hour24 >= 0 && hour24 < 6) brightnessPercent = 50;
+  }
+
+  int pwmValue = map(brightnessPercent, 0, 100, 0, 255);
+  pwmValue = constrain(pwmValue, 0, 255);
+
+  // Output PWM ke LED
+  analogWrite(ledPin, pwmValue);
+
+  // ==========================
+  // LCD
+  // ==========================
+  String line1 = "Time " + timeStr;
+  if (line1.length() > 16) line1 = line1.substring(0, 16);
+  lcd.setCursor(0, 0);
+  lcd.print(line1);
+
+  String line2 = "Kecerahan:" + String(brightnessPercent) + "%";
+  if (line2.length() > 16) line2 = line2.substring(0, 16);
+  lcd.setCursor(0, 1);
+  lcd.print(line2);
+  for (int i = line2.length(); i < 16; ++i) lcd.print(' ');
+
+  // ==========================
+  // Blynk Output
+  // ==========================
+  Blynk.virtualWrite(V0, timeStr);           // RTC STRING
+  Blynk.virtualWrite(V1, ldrValue);          // Sensor cahaya INTEGER
+  Blynk.virtualWrite(V2, brightnessPercent); // LED INTEGER %
+
+  delay(200);
+}
+```
+
+## Lampiran Dokumentasi
+Berikut adalah dokumentasi visual dari simulasi dan kontrol lampu pada wokwi:
+
+| No | Deskripsi | Lampiran |
+|----|-----------|----------|
+| 1  | Tampilan Alat pada Simulasi Wokwi | <img width="753" height="708" alt="wokwi simulation" src="https://github.com/user-attachments/assets/bb78d805-3018-41e4-863d-ccb32accccf7" /> |
+| 2  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (1) | ![4444](https://github.com/user-attachments/assets/56715821-953d-4aa3-9ef8-8ffc554e3d05) |
+| 3  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (2) | ![11111](https://github.com/user-attachments/assets/4b839ec4-9148-435b-8ab6-2c66a2ebbee4) |
+| 4  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (3) | ![2222](https://github.com/user-attachments/assets/0caceb25-c6d8-47ec-aca6-0e759bc74ca2)  |
+| 5  | Tampilan Mengontrol Menggunakan Aplikasi Blynk (3) | ![3333](https://github.com/user-attachments/assets/afc0682a-5f6e-421f-a9be-72b052c3d8c8) |
+
 ## Kesimpulan
 
-Prototipe **IntelliLight** berhasil membuktikan bahwa sistem Smart Street Lighting berbasis **Arduino**, **Sensor LDR**, dan **RTC** dapat dirancang untuk berfungsi secara adaptif dan otomatis sesuai tujuan pembuatan prototipe. Sistem ini mampu membaca intensitas cahaya lingkungan melalui sensor LDR dan memproses data waktu dari RTC untuk mengatur kecerahan lampu LED secara real-time menggunakan PWM. Lampu menyala **100% pada malam hari (19.00–23.59) dan 50% pada dini hari (00.00–06.00)**, serta menyesuaikan kecerahan di siang hari berdasarkan cahaya sekitar, sehingga implementasi pencahayaan adaptif berjalan dengan efektif. Hasil ini menegaskan bahwa **IntelliLight** dapat bekerja otomatis sebagai pengendali pencahayaan adaptif, menjawab rumusan masalah terkait cara kerja sistem, mekanisme otomatisasi, dan pengendalian kecerahan lampu. Dengan demikian, prototipe ini memenuhi tujuan utama, yaitu menciptakan sistem **Smart Street Lighting berbasis IoT** yang efisien, responsif, dan relevan untuk implementasi Smart City.
+Prototipe IntelliLight berhasil membuktikan bahwa sistem Smart Street Lighting berbasis Arduino/ESP32, Sensor LDR, dan RTC dapat dirancang untuk berfungsi secara adaptif dan otomatis sesuai tujuan pembuatan prototipe. Sistem ini mampu membaca intensitas cahaya lingkungan melalui sensor LDR dan memproses data waktu dari RTC untuk mengatur kecerahan lampu LED secara real-time menggunakan PWM. Lampu menyala 100% pada malam hari (19.00–23.59) dan 50% pada dini hari (00.00–06.00), serta menyesuaikan kecerahan di siang hari berdasarkan cahaya sekitar, sehingga implementasi pencahayaan adaptif berjalan dengan efektif.
 
-> **Catatan:** Proyek ini masih dalam tahap pengembangan. Sistem **IoT** memungkinkan pengendalian lampu dari jarak jauh, termasuk menyalakan, mematikan, dan mengatur persentase kecerahan lampu. Masih banyak potensi pengembangan lebih lanjut untuk meningkatkan efisiensi, responsivitas, dan fitur pintar dari IntelliLight.
+Integrasi IoT menggunakan ESP32 dan Blynk memungkinkan lampu dikontrol secara jarak jauh melalui smartphone, memantau kecerahan lampu, status nyala/mati, serta waktu secara real-time. Simulasi dilakukan pada platform Wokwi, yang menunjukkan bagaimana prototipe ini dapat diuji secara virtual sebelum diterapkan di dunia nyata. Hasil pengujian dan integrasi ini menegaskan bahwa IntelliLight tidak hanya bekerja otomatis sebagai pengendali pencahayaan adaptif, tetapi juga siap diterapkan secara langsung untuk implementasi Smart City, menjawab rumusan masalah terkait mekanisme otomatisasi, pengendalian kecerahan lampu, dan integrasi IoT.
