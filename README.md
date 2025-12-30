@@ -1,4 +1,4 @@
-<img width="1600" height="1200" alt="pengujian lcd" src="https://github.com/user-attachments/assets/dff22209-2784-4004-8722-7822210ad22c" /># IntelliLight  
+# IntelliLight  
 **Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
 Nama Anggota :
