@@ -420,7 +420,7 @@ Setelah semua komponen diuji secara terpisah (LCD, LED, RTC, LDR), tahap selanju
 
 # Integrasi dengan IoT - IntelliLight
 
-## Narasi Integrasi
+## Integrasi
 
 Proyek **IntelliLight** diintegrasikan dengan IoT menggunakan **ESP32** dan platform **Blynk**. Integrasi ini memungkinkan **lampu jalan pintar dikontrol secara jarak jauh** melalui aplikasi Blynk di smartphone. Sistem dapat:
 
@@ -431,7 +431,7 @@ Proyek **IntelliLight** diintegrasikan dengan IoT menggunakan **ESP32** dan plat
 
 Simulasi dilakukan menggunakan **Wokwi** ([https://wokwi.com](https://wokwi.com)), platform simulasi elektronik berbasis web. ESP32 yang terhubung ke jaringan **Wi-Fi Guest** berkomunikasi langsung dengan Blynk menggunakan **Auth Token akun Blynk**. Setiap interaksi di aplikasi Blynk langsung mempengaruhi output di simulasi ESP32, termasuk **perubahan kecerahan**, **ON/OFF lampu**, serta **pemantauan sensor LDR**.
 
-> **Klarifikasi Pemilihan Mikrocontroller**  
+> **Mikrocontroller**  
 
 Pada simulasi Wokwi, prototipe **IntelliLight** menggunakan **ESP32 tunggal** dan **tidak menggunakan Arduino Mega**. Hal ini dikarenakan:
 
