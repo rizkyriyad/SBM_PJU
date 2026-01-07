@@ -309,12 +309,12 @@ Berikut dokumentasi pengujian komponen **IntelliLight** :
 
 | No | Deskripsi | Lampiran |
 |----|-----------|----------|
-| 1  | Output LCD yang menampilan INPUT dari RTC (RTC + LCD) |<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/ad497998-a64e-4eb9-a3f3-a79019a156d7" /> |
-| 2  | LED PWM | <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/04aabf60-7275-4dd9-bc29-4fad38a2d64b" /> |
+| 1  | Output LCD yang menampilan INPUT dari RTC (RTC + LCD) |<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/ad497998-a64e-4eb9-a3f3-a79019a156d7" /> |
+| 2  | LED PWM | <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/04aabf60-7275-4dd9-bc29-4fad38a2d64b" /> |
 | 3  | Sensor LDR| <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/d9a137c4-73b5-4232-b626-4b76616baaa8" /> |
 
 
-## Pembuatan Alat
+## Pembuatan Alat Konvensional
 
 Pada tahap pembuatan alat, sistem IntelliLight mulai diintegrasikan sebagai prototipe Smart Street Lighting berbasis Arduino. Sistem ini menggabungkan **Sensor LDR**, **RTC**, **LED**, dan **LCD** untuk membentuk lampu jalan adaptif yang menyesuaikan kecerahan berdasarkan kondisi cahaya lingkungan dan waktu aktual.
 
@@ -331,7 +331,7 @@ Tahap pembuatan alat mencakup:
    - Membuat struktur program awal untuk membaca sensor dan mengatur LED serta menampilkan informasi di LCD.  
    - Sistem masih dalam versi **non-IoT**, fokus pada pengoperasian lokal.  
 
-## Kode IntelliLight
+## Kode IntelliLight Konvensional
 
 Berikut potongan kode untuk prototipe IntelliLight yang mengintegrasikan **Sensor LDR**, **RTC**, **LED**, dan **LCD**. Sistem ini masih versi non-IoT dan fokus pada pengoperasian lokal.
 
