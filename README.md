@@ -887,13 +887,13 @@ Berdasarkan pengujian yang telah dilakukan, sistem IntelliLight menunjukkan hasi
 
 | No | Jenis Dokumentasi | Keterangan | File |
 |----|------------------|------------|------|
-| 1 | Wiring Detail | Dokumentasi koneksi pin antar komponen dengan ESP32 | <img width="886" height="673" alt="image" src="https://github.com/user-attachments/assets/9660178a-e54f-475d-98a3-a076edc07d29" /> |
-| 2 | Tampilan LCD | LCD menampilkan waktu (RTC) dan persentase kecerahan lampu | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/bd9f3ada-4ec9-431d-b914-8efb86e57acc" /> |
-| 3 | Kontrol ON | Pengujian tombol ON lampu melalui aplikasi Blynk |<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7af387e2-a1da-4898-931b-944ae2ca85dc" /> |
-| 4 | Kontrol OFF | Pengujian tombol OFF lampu melalui aplikasi Blynk | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/3668c1ba-3b12-4144-b7ef-35e172653586" /> |
-| 5 | Kontrol Kecerahan | Pengaturan kecerahan lampu menggunakan slider Blynk | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b212929e-e71d-46de-901f-efc8f9c4caaa" />|
-| 6 | Hasil Implementasi | Sistem berjalan normal pada kondisi nyata | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b03d50de-a68f-453c-8127-1698b5cd92ab" /> |
-
+| 1 | Wiring Detail | <img width="886" height="673" alt="image" src="https://github.com/user-attachments/assets/9660178a-e54f-475d-98a3-a076edc07d29" /> | Dokumentasi koneksi pin antar komponen dengan ESP32 |
+| 2 | Tampilan LCD |<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/bd9f3ada-4ec9-431d-b914-8efb86e57acc" /> | LCD menampilkan waktu (RTC) dan persentase kecerahan lampu |
+| 3 | Kontrol ON | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7af387e2-a1da-4898-931b-944ae2ca85dc" /> | Pengujian tombol ON lampu melalui aplikasi Blynk |
+| 4 | Kontrol OFF | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/3668c1ba-3b12-4144-b7ef-35e172653586" /> | Pengujian tombol OFF lampu melalui aplikasi Blynk | 
+| 5 | Kontrol Kecerahan | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b212929e-e71d-46de-901f-efc8f9c4caaa" /> | Pengaturan kecerahan lampu menggunakan slider Blynk |
+| 6 | Hasil Implementasi | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b03d50de-a68f-453c-8127-1698b5cd92ab" /> | Sistem berjalan normal pada kondisi nyata | 
+| 7 | Tampilan Datastream Blynk |<img width="1579" height="550" alt="image" src="https://github.com/user-attachments/assets/8dd16945-a2a4-4485-923e-ce3c5c84095b" /> | Sistem berjalan normal pada kondisi nyata | 
 
 # Kesimpulan
 
