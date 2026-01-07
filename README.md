@@ -40,13 +40,15 @@ Tujuan utama dari pengembangan prototipe **IntelliLight (Implementasi Smart Stre
 
 Adapun alat dan bahan yang digunakan dalam prototipe **IntelliLight** adalah:
 
-1. **Arduino (Mikrokontroler)** – sebagai mikrokontroler utama untuk pemrograman dan pengendalian sistem.  
-2. **Lampu LED** – berfungsi sebagai representasi lampu jalan; kecerahannya dikontrol menggunakan **PWM**.  
-3. **Liquid Crystal Display (LCD) 2x16** – menampilkan status lampu secara real-time serta menunjukkan waktu setempat.  
-4. **Kabel** – untuk menghubungkan antar perangkat dan modul.  
-5. **Light Sensor (LDR)** – sebagai pendeteksi intensitas cahaya lingkungan.  
-6. **Real Time Clock (RTC)** – sebagai penentu waktu aktual untuk mengatur logika malam dan siang.  
-7. **Laptop** – untuk memprogram Arduino menggunakan Arduino IDE dan memonitor keluaran melalui Serial Monitor.  
+1. **Arduino (Mikrokontroler)** – sebagai mikrokontroler utama untuk pemrograman dan pengendalian sistem dalam bentuk konvensional untuk pengujian awal.
+2. **ESP32 (Mikrokontroler)** = sebagai mikrokontroler utama untuk pemrograman dan pengendalian sistem dalam bentuk IoT untuk hasil akhir.
+3. **Lampu LED** – berfungsi sebagai representasi lampu jalan; kecerahannya dikontrol menggunakan **PWM**.  
+4. **Liquid Crystal Display (LCD) 2x16** – menampilkan status lampu secara real-time serta menunjukkan waktu setempat.  
+5. **Kabel** – untuk menghubungkan antar perangkat dan modul.  
+6. **Light Sensor (LDR)** – sebagai pendeteksi intensitas cahaya lingkungan.  
+7. **Real Time Clock (RTC)** – sebagai penentu waktu aktual untuk mengatur logika malam dan siang.  
+8. **Laptop** – untuk memprogram Arduino menggunakan Arduino IDE dan memonitor keluaran melalui Serial Monitor serta _setup_ sistem aplikasi blynk.
+9. **Handphone** - untuk mengontrol Intellilight melalui aplikasi Blynk.
 
 > **Catatan:** Alat dan bahan akan ditambahkan seiring berjalannya pengembangan prototipe.
 
