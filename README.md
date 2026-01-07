@@ -889,7 +889,7 @@ Berdasarkan pengujian yang telah dilakukan, sistem IntelliLight menunjukkan hasi
 |----|------------------|------------|------|
 | 1 | Wiring Detail | Dokumentasi koneksi pin antar komponen dengan ESP32 | <img width="886" height="673" alt="image" src="https://github.com/user-attachments/assets/9660178a-e54f-475d-98a3-a076edc07d29" /> |
 | 2 | Tampilan LCD | LCD menampilkan waktu (RTC) dan persentase kecerahan lampu | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/bd9f3ada-4ec9-431d-b914-8efb86e57acc" /> |
-| 3 | Kontrol ON | Pengujian tombol ON/OFF lampu melalui aplikasi Blynk | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7f0365a1-609d-4a3b-8c48-c6a2786663ec" /> |
+| 3 | Kontrol ON | Pengujian tombol ON/OFF lampu melalui aplikasi Blynk |<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7af387e2-a1da-4898-931b-944ae2ca85dc" /> |
 | 4 | Kontrol OFF | Pengujian tombol OFF lampu melalui aplikasi Blynk | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/3668c1ba-3b12-4144-b7ef-35e172653586" /> |
 | 5 | Kontrol Kecerahan | Pengaturan kecerahan lampu menggunakan slider Blynk | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b212929e-e71d-46de-901f-efc8f9c4caaa" />|
 | 6 | Hasil Implementasi | Sistem berjalan normal pada kondisi nyata | <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b03d50de-a68f-453c-8127-1698b5cd92ab" /> |
