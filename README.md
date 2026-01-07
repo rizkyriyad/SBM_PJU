@@ -1,4 +1,4 @@
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/b61ea8aa-d852-44e1-92da-c7d995c97f57" /><img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/40943d7d-2236-4360-a585-8547226e25b1" /><img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/2a686b0c-44c4-4e2b-8ffb-24c7405be068" /># IntelliLight  
+# IntelliLight  
 **Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
 Nama Anggota :
