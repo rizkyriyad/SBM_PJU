@@ -4,7 +4,7 @@
 Nama Anggota :
 1. Muhammad Rizky Riyadin, NPM : 2306030013
 2. Hizkia Chris Stevanus, NPM : 2306030076
-
+   
 ## Latar Belakang
 
 Penerangan jalan umum merupakan infrastruktur penting yang berperan dalam mendukung keselamatan, keamanan, dan aktivitas masyarakat pada malam hari. Namun, sistem penerangan jalan konvensional umumnya masih bersifat statis, di mana lampu menyala penuh dari senja hingga fajar tanpa mempertimbangkan kondisi lingkungan yang sebenarnya. Pola ini menyebabkan konsumsi energi yang tinggi serta pemborosan sumber daya, terutama saat kondisi jalan sepi atau intensitas cahaya alami masih mencukupi. Beberapa penelitian menunjukkan bahwa sistem penerangan jalan menyumbang porsi signifikan dari konsumsi energi listrik perkotaan, sehingga diperlukan solusi yang lebih efisien dan adaptif  
@@ -927,4 +927,5 @@ Dalam pengembangan prototipe **IntelliLight**, setiap anggota tim memiliki peran
 - Berperan dalam **uji coba fisik prototipe**, memberikan masukan terkait kestabilan dan keamanan sistem saat diimplementasikan.
 - Mendokumentasikan kegiatan.
 - Nilai: **75**
+
 Dengan pembagian tugas ini, tim berhasil mengembangkan **IntelliLight** secara menyeluruh, mulai dari riset, coding, simulasi, pengujian, hingga implementasi fisik dan integrasi IoT.
