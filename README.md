@@ -2,8 +2,8 @@
 **Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
 Nama Anggota :
-1. Muhammad Rizky Riyadin
-2. Hizkia Chris Stevanus
+1. Muhammad Rizky Riyadin, NPM : 2306030013
+2. Hizkia Chris Stevanus, NPM : 2306030061
 
 ## Latar Belakang
 
@@ -919,11 +919,12 @@ Dalam pengembangan prototipe **IntelliLight**, setiap anggota tim memiliki peran
 - Mengatur **data stream Blynk**, pengujian komunikasi, dan monitoring real-time.  
 - Memastikan seluruh prototipe berjalan stabil, efisien, dan siap untuk implementasi fisik.  
 - Menyusun **dokumentasi visual** berupa tabel pengujian, grafik, dan foto prototipe.
+- Nilai: **100**
 
 ## Hizkia Chris Stevanus
 - Membantu melakukan **pemeriksaan kondisi kabel dan koneksi hardware**, memastikan semua jalur listrik dan sinyal aman dan sesuai rancangan.  
 - Membantu proses **wiring hardware** untuk koneksi ESP32, LED, sensor LDR, RTC, dan LCD.  
 - Berperan dalam **uji coba fisik prototipe**, memberikan masukan terkait kestabilan dan keamanan sistem saat diimplementasikan.
 - Mendokumentasikan kegiatan.
-
+- Nilai: **75**
 Dengan pembagian tugas ini, tim berhasil mengembangkan **IntelliLight** secara menyeluruh, mulai dari riset, coding, simulasi, pengujian, hingga implementasi fisik dan integrasi IoT.
