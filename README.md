@@ -3,7 +3,7 @@
 
 Nama Anggota :
 1. Muhammad Rizky Riyadin, NPM : 2306030013
-2. Hizkia Chris Stevanus, NPM : 2306030061
+2. Hizkia Chris Stevanus, NPM : 2306030076
 
 ## Latar Belakang
 
