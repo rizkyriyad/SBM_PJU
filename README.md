@@ -1,9 +1,8 @@
 # IntelliLight  
 **Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
-Nama Anggota :
-1. Muhammad Rizky Riyadin, NPM : 2306030013
-2. Hizkia Chris Stevanus, NPM : 2306030076
+Nama :Muhammad Rizky Riyadin
+NPM : 2306030013
    
 ## Latar Belakang
 
@@ -904,28 +903,3 @@ Selain itu, integrasi IoT menggunakan **ESP32** dan platform **Blynk** memungkin
 Implementasi fisik di lapangan memperkuat hasil simulasi, di mana ESP32 yang terkoneksi ke Wi-Fi lokal mampu mengatur lampu berdasarkan sensor dan waktu secara real-time, sambil menampilkan informasi pada **LCD I2C**. Sistem ini menunjukkan kestabilan, responsivitas, dan keandalan dalam kondisi nyata, serta mendukung penggunaan energi yang lebih efisien dibandingkan sistem penerangan konvensional.
 
 Secara keseluruhan, prototipe **IntelliLight** menjawab semua rumusan masalah: mendemonstrasikan mekanisme pengendalian adaptif lampu, kemampuan operasi otomatis berdasarkan cahaya dan waktu, serta integrasi IoT yang memungkinkan pemantauan dan kontrol jarak jauh. Dengan demikian, prototipe ini siap diterapkan sebagai solusi **Smart Street Lighting** yang efisien, responsif, dan relevan dengan perkembangan teknologi.
-
-# Kontribusi Anggota
-
-Dalam pengembangan prototipe **IntelliLight**, setiap anggota tim memiliki peran dan kontribusi yang spesifik untuk memastikan proyek berjalan lancar dan menyeluruh.
-
-## Muhammad Rizky Riyadin
-- Melakukan **riset literatur** terkait sistem Smart Street Lighting, sensor cahaya, RTC, dan integrasi IoT.  
-- Membuat dan menulis **laporan proyek** secara detail, termasuk dokumentasi pengujian dan integrasi.  
-- **Membuat dan menguji program** untuk prototipe IntelliLight, baik versi lokal (non-IoT) maupun versi IoT dengan ESP32 dan Blynk.  
-- Menyusun **wiring sistem/hardware**, termasuk koneksi sensor LDR, RTC, LED, dan LCD.  
-- Melakukan **simulasi** sistem di Wokwi untuk pengujian awal dan validasi logika program.  
-- **Integrasi sistem** antara sensor, mikrokontroler, dan Blynk, termasuk uji coba kontrol manual dan otomatis.  
-- Mengatur **data stream Blynk**, pengujian komunikasi, dan monitoring real-time.  
-- Memastikan seluruh prototipe berjalan stabil, efisien, dan siap untuk implementasi fisik.  
-- Menyusun **dokumentasi visual** berupa tabel pengujian, grafik, dan foto prototipe.
-- Nilai: **100**
-
-## Hizkia Chris Stevanus
-- Membantu melakukan **pemeriksaan kondisi kabel dan koneksi hardware**, memastikan semua jalur listrik dan sinyal aman dan sesuai rancangan.  
-- Membantu proses **wiring hardware** untuk koneksi ESP32, LED, sensor LDR, RTC, dan LCD.  
-- Berperan dalam **uji coba fisik prototipe**, memberikan masukan terkait kestabilan dan keamanan sistem saat diimplementasikan.
-- Mendokumentasikan kegiatan.
-- Nilai: **75**
-
-Dengan pembagian tugas ini, tim berhasil mengembangkan **IntelliLight** secara menyeluruh, mulai dari riset, coding, simulasi, pengujian, hingga implementasi fisik dan integrasi IoT.
