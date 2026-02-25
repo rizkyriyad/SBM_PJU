@@ -1,7 +1,7 @@
 # IntelliLight  
 **Smart Street Lighting Berbasis IoT dengan Sensor Cahaya dan RTC untuk Pencahayaan Adaptif**
 
-Nama :Muhammad Rizky Riyadin
+Nama : Muhammad Rizky Riyadin
 NPM : 2306030013
    
 ## Latar Belakang
